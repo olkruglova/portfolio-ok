@@ -1,0 +1,9 @@
+<div class="cards-wrapper">
+  <div class="cards">
+    @for (card of cards(); let i = $index; track card.class) {
+      <app-card [card]="card" [index]="i" />
+    }
+  </div>
+</div>
+
+<router-outlet />
