@@ -20,7 +20,7 @@ export class MainComponent {
     },
     {
       collapseTitle: 'L',
-      expandTitle: 'Skills & Stack',
+      expandTitle: 'Skills',
       content: 'This is the second card.',
       class: 'card-skills',
       bgColor: 'black-plum',
