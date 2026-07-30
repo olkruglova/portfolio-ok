@@ -92,7 +92,7 @@ $gradient-border-light: linear-gradient(
   .skill-tag {
     border-color: colors.$black-plum-dark;
     color: colors.$black-plum-dark;
-    background: colors.$black-plum-light;
+    background: rgba(colors.$black-plum-light, 0.6);
   }
 }
 
@@ -131,7 +131,7 @@ $gradient-border-light: linear-gradient(
   .skill-tag {
     border-color: colors.$black-plum-dark;
     color: colors.$text-dark;
-    background: colors.$black-plum-dark;
+    background: rgba(colors.$black-plum-dark, 0.6);
   }
 }
 
@@ -202,6 +202,14 @@ $gradient-border-light: linear-gradient(
 
 :host(:last-child) .card-body {
   width: 100%;
+}
+
+:host(.card-about) .card-body {
+  align-items: flex-start;
+}
+
+:host(.card-about) .content {
+  max-width: none;
 }
 
 .letter {
