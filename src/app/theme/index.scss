@@ -5,4 +5,16 @@
     background 0.4s ease-in-out,
     color 0.4s ease-in-out,
     border-color 0.4s ease-in-out;
+
+  --space-sm: 24px;
+  --space-md: 28px;
+  --space-lg: 32px;
+
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-elevated: 0 16px 48px rgba(0, 0, 0, 0.18);
+
+  --interactive-lift: translateY(-2px);
+  --interactive-lift-transition: transform 0.2s ease;
+
+  --disabled-opacity: 0.4;
 }

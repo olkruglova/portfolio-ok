@@ -1,0 +1,39 @@
+@if (modalState.isOpen()) {
+  <div class="modal-backdrop" (click)="close()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <button type="button" class="modal-close" aria-label="Close" (click)="close()">&times;</button>
+
+      <h2>Contact me</h2>
+
+      @switch (status()) {
+        @case ('success') {
+          <p class="modal-feedback success">Message sent successfully! I'll get back to you soon.</p>
+        }
+        @default {
+          <form #contactForm="ngForm" (ngSubmit)="submit()">
+            <label>
+              Name
+              <input type="text" name="name" [(ngModel)]="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" [(ngModel)]="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" [(ngModel)]="message" rows="4" required></textarea>
+            </label>
+
+            @if (status() === 'error') {
+              <p class="modal-feedback error">Something went wrong. Please try again.</p>
+            }
+
+            <button type="submit" [disabled]="contactForm.invalid || status() === 'sending'">
+              {{ status() === 'sending' ? 'Sending…' : 'Send' }}
+            </button>
+          </form>
+        }
+      }
+    </div>
+  </div>
+}

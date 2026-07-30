@@ -8,7 +8,6 @@
   flex: 1;
   display: flex;
   min-height: 0;
-  overflow: hidden;
 }
 .cards {
   display: flex;
@@ -27,14 +26,16 @@
     flex: 1;
   }
 
-  &:has(> app-card:hover) {
+  &:has(> app-card:hover),
+  &:has(> app-card.is-open) {
     width: 100%;
 
-    > app-card:not(:hover) {
+    > app-card:not(:hover):not(.is-open) {
       flex: 0 0 15%;
     }
 
-    > app-card:hover {
+    > app-card:hover,
+    > app-card.is-open {
       flex: 1;
     }
   }
