@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { MainComponent } from './main/main';
 import { ThemeService } from './theme/theme';
+import { ThemeToggleComponent } from './theme-toggle/theme-toggle';
 
 @Component({
   selector: 'app-root',
-  imports: [MainComponent],
+  imports: [MainComponent, ThemeToggleComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
