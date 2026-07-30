@@ -35,9 +35,15 @@ export class MainComponent {
     {
       collapseTitle: 'A',
       expandTitle: 'Contact',
-      content: 'This is the fourth card.',
+      content: null,
       class: 'card-contact',
       bgColor: 'deep-indigo',
+      contactForm: true,
+      links: [
+        { platform: 'facebook', url: 'https://www.facebook.com/olga.kruglova.9849' },
+        { platform: 'linkedin', url: 'https://www.linkedin.com/in/olga-k-502b06154/' },
+        { platform: 'github', url: 'https://github.com/olkruglova' },
+      ],
     },
   ]);
 }
