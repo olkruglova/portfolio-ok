@@ -1,5 +1,14 @@
 <div class="card-content" [class]="'card-' + index()">
-  <span class="collapse-title">{{ card().collapseTitle }}</span>
-  <span class="expand-title">{{ card().expandTitle }}</span>
+  <span class="title" aria-hidden="true">
+    @for (letter of expandLetters(); track $index) {
+      <span
+        class="letter"
+        [class.anchor]="letter.isAnchor"
+        [style.transition-delay.ms]="$index * 30"
+        >{{ letter.char }}</span
+      >
+    }
+  </span>
+  <span class="sr-only">{{ card().expandTitle }}</span>
   <p class="content">{{ card().content }}</p>
 </div>
