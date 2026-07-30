@@ -1,0 +1,35 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 50;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.theme-toggle-clip-path {
+  transition: d 0.5s cubic-bezier(0, 0, 0.15, 1.25);
+}
+
+:host-context(.dark) .theme-toggle-clip-path {
+  d: path('M-18-1h55v37h-55zm32 12a1 1 0 0025 0 1 1 0 00-25 0');
+}
+
+@supports not (d: path('M0 0')) {
+  :host-context(.dark) .theme-toggle-clip-path {
+    transition: transform 0.5s cubic-bezier(0, 0, 0.15, 1.25);
+    transform: translate(-19px, 5px);
+  }
+}

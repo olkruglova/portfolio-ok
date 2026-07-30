@@ -1,1 +1,8 @@
 @forward "./colors";
+
+:root {
+  --theme-transition:
+    background 0.4s ease-in-out,
+    color 0.4s ease-in-out,
+    border-color 0.4s ease-in-out;
+}

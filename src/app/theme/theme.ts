@@ -5,11 +5,15 @@ export type ThemeMode = 'dark' | 'light';
 const THEME_STORAGE_KEY = 'theme';
 
 function readStoredTheme(): ThemeMode {
-  const stored = localStorage.getItem(THEME_STORAGE_KEY);
+  const stored = typeof localStorage !== 'undefined' ? localStorage.getItem(THEME_STORAGE_KEY) : null;
   if (stored === 'dark' || stored === 'light') {
     return stored;
   }
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return typeof window !== 'undefined' &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
 }
 
 @Injectable({ providedIn: 'root' })
@@ -18,6 +22,8 @@ export class ThemeService {
 
   setTheme(mode: ThemeMode): void {
     this.theme.set(mode);
-    localStorage.setItem(THEME_STORAGE_KEY, mode);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(THEME_STORAGE_KEY, mode);
+    }
   }
 }

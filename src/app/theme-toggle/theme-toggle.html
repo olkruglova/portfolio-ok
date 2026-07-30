@@ -1,0 +1,21 @@
+<button
+  type="button"
+  class="theme-toggle"
+  title="Toggle theme"
+  aria-label="Toggle theme"
+  (click)="toggleTheme()"
+>
+  <svg width="1em" height="1em" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor">
+    <defs>
+      <clipPath [attr.id]="clipId">
+        <path
+          class="theme-toggle-clip-path"
+          d="M0-5h55v37h-55zm32 12a1 1 0 0025 0 1 1 0 00-25 0"
+        />
+      </clipPath>
+    </defs>
+    <g [attr.clip-path]="'url(#' + clipId + ')'">
+      <circle cx="16" cy="16" r="15" />
+    </g>
+  </svg>
+</button>
