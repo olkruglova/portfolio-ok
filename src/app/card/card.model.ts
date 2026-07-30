@@ -7,6 +7,11 @@ export interface SocialLink {
   url: string;
 }
 
+export interface SkillCategory {
+  name: string;
+  items: string[];
+}
+
 export interface Card {
   collapseTitle: string;
   expandTitle: string;
@@ -16,4 +21,5 @@ export interface Card {
   links?: SocialLink[];
   contactForm?: boolean;
   resumeUrl?: string;
+  skills?: SkillCategory[];
 }

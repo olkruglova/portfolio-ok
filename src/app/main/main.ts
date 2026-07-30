@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CardComponent } from '../card/card';
 import { Card } from '../card/card.model';
 import about from '../../assets/about.json';
+import skills from '../../assets/skills.json';
 
 const EXPERIENCE_START = new Date(2019, 3, 1); // April 2019
 
@@ -37,9 +38,10 @@ export class MainComponent {
     {
       collapseTitle: 'L',
       expandTitle: 'Skills',
-      content: 'This is the second card.',
+      content: null,
       class: 'card-skills',
       bgColor: 'black-plum',
+      skills: skills.categories,
     },
     {
       collapseTitle: 'G',
