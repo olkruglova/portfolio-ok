@@ -11,7 +11,23 @@
   </span>
   <span class="sr-only">{{ card().expandTitle }}</span>
   <div class="card-body">
-    <p class="content">{{ card().content }}</p>
+    @if (card().content; as content) {
+      <p class="content">{{ content }}</p>
+    }
+    @if (card().skills; as skillCategories) {
+      <div class="skills">
+        @for (category of skillCategories; track category.name) {
+          <div class="skill-category">
+            <span class="skill-category-name">{{ category.name }}</span>
+            <div class="skill-tags">
+              @for (skill of category.items; track skill) {
+                <span class="skill-tag">{{ skill }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    }
     @if (card().resumeUrl; as resumeUrl) {
       <div class="resume-actions">
         <a

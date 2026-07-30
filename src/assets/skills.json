@@ -1,0 +1,54 @@
+{
+  "categories": [
+    {
+      "name": "Frontend",
+      "items": ["Angular", "React", "TypeScript", "JavaScript (ES6+)"]
+    },
+    {
+      "name": "AI",
+      "items": ["Claude", "Copilot", "OpenAI"]
+    },
+    {
+      "name": "Styling",
+      "items": ["Tailwind CSS", "Material UI", "PrimeNG", "Kendo", "Bootstrap", "Design Tokens"]
+    },
+    {
+      "name": "Testing",
+      "items": [
+        "Jasmine",
+        "Jest",
+        "Karma",
+        "Playwright",
+        "React Testing Library",
+        "Unit Testing",
+        "Integration Testing",
+        "Code Review",
+        "SonarQube"
+      ]
+    },
+    {
+      "name": "Tools",
+      "items": [
+        "Git",
+        "GitHub",
+        "Azure",
+        "CI/CD Pipelines",
+        "npm",
+        "yarn",
+        "Figma",
+        "Adobe Suite",
+        "Jira",
+        "Confluence",
+        "Agile (Scrum, Kanban)"
+      ]
+    },
+    {
+      "name": "Data",
+      "items": ["RxJS", "Signals", "REST APIs", "D3.js", "Data Visualization", "Google Analytics"]
+    },
+    {
+      "name": "Accessibility & RWD",
+      "items": ["Responsive Design", "WCAG Accessibility"]
+    }
+  ]
+}

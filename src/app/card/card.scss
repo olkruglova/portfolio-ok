@@ -84,6 +84,16 @@ $gradient-border-light: linear-gradient(
   .social-link {
     color: colors.$text-dark;
   }
+
+  .skill-category-name {
+    color: colors.$text-dark;
+  }
+
+  .skill-tag {
+    border-color: colors.$black-plum-dark;
+    color: colors.$black-plum-dark;
+    background: rgba(colors.$black-plum-light, 0.6);
+  }
 }
 
 :host-context(.light) {
@@ -113,6 +123,16 @@ $gradient-border-light: linear-gradient(
   .social-link {
     color: colors.$deep-indigo-dark;
   }
+
+  .skill-category-name {
+    color: colors.$text-light;
+  }
+
+  .skill-tag {
+    border-color: colors.$black-plum-dark;
+    color: colors.$text-dark;
+    background: rgba(colors.$black-plum-dark, 0.6);
+  }
 }
 
 :host(:hover),
@@ -134,6 +154,10 @@ $gradient-border-light: linear-gradient(
   }
 
   .resume-actions {
+    display: flex;
+  }
+
+  .skills {
     display: flex;
   }
 
@@ -180,6 +204,14 @@ $gradient-border-light: linear-gradient(
   width: 100%;
 }
 
+:host(.card-about) .card-body {
+  align-items: flex-start;
+}
+
+:host(.card-about) .content {
+  max-width: none;
+}
+
 .letter {
   display: inline-block;
   overflow: hidden;
@@ -211,6 +243,48 @@ $gradient-border-light: linear-gradient(
   letter-spacing: 0.1em;
   max-width: 70ch;
   text-indent: 1.5em;
+}
+
+.skills {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.skill-category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-category-name {
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  font-family: 'Archivo', sans-serif;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1.5px solid;
+  transition: var(--interactive-lift-transition);
+
+  &:hover {
+    transform: var(--interactive-lift);
+  }
 }
 
 .resume-actions {
