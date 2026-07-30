@@ -62,9 +62,23 @@ $gradient-border-light: linear-gradient(
     linear-gradient(colors.$background-dark, colors.$background-dark) padding-box,
     $gradient-border-dark border-box;
 
+  .content {
+    color: colors.$text-dark;
+  }
+
   .contact-button {
     background: colors.$text-dark;
     color: colors.$deep-indigo-dark;
+  }
+
+  .resume-btn--outline {
+    border-color: colors.$text-dark;
+    color: colors.$text-dark;
+  }
+
+  .resume-btn--filled {
+    background: colors.$text-dark;
+    color: colors.$mulberry-dark;
   }
 
   .social-link {
@@ -77,8 +91,22 @@ $gradient-border-light: linear-gradient(
     linear-gradient(colors.$background-light, colors.$background-light) padding-box,
     $gradient-border-light border-box;
 
+  .content {
+    color: colors.$text-light;
+  }
+
   .contact-button {
     background: colors.$deep-indigo-dark;
+    color: colors.$text-dark;
+  }
+
+  .resume-btn--outline {
+    border-color: colors.$mulberry-dark;
+    color: colors.$mulberry-dark;
+  }
+
+  .resume-btn--filled {
+    background: colors.$mulberry-dark;
     color: colors.$text-dark;
   }
 
@@ -90,7 +118,7 @@ $gradient-border-light: linear-gradient(
 :host(:hover),
 :host(.is-open) {
   flex-basis: 80%;
-  padding-left: 1rem;
+  padding-left: calc(var(--space-sm) * 2);
   box-shadow: var(--shadow-elevated);
 
   .content {
@@ -103,6 +131,10 @@ $gradient-border-light: linear-gradient(
 
   .contact-button {
     display: inline-block;
+  }
+
+  .resume-actions {
+    display: flex;
   }
 
   .letter {
@@ -141,6 +173,11 @@ $gradient-border-light: linear-gradient(
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  width: 90%;
+}
+
+:host(:last-child) .card-body {
+  width: 100%;
 }
 
 .letter {
@@ -170,6 +207,45 @@ $gradient-border-light: linear-gradient(
 
 .content {
   display: none;
+  font-family: 'Archivo', sans-serif;
+  letter-spacing: 0.1em;
+  max-width: 70ch;
+  text-indent: 1.5em;
+}
+
+.resume-actions {
+  display: none;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: var(--space-sm);
+}
+
+.resume-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition:
+    var(--interactive-lift-transition),
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: var(--interactive-lift);
+    box-shadow: var(--shadow-elevated);
+  }
+}
+
+.resume-btn--outline {
+  background: transparent;
+  border: 2px solid;
+}
+
+.resume-btn--filled {
+  border: none;
 }
 
 .social-links {

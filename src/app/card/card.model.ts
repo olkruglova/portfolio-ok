@@ -15,4 +15,5 @@ export interface Card {
   bgColor: CardBgColor;
   links?: SocialLink[];
   contactForm?: boolean;
+  resumeUrl?: string;
 }
