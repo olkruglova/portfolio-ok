@@ -12,6 +12,20 @@
   <span class="sr-only">{{ card().expandTitle }}</span>
   <div class="card-body">
     <p class="content">{{ card().content }}</p>
+    @if (card().resumeUrl; as resumeUrl) {
+      <div class="resume-actions">
+        <a
+          class="resume-btn resume-btn--outline"
+          [href]="resumeUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Resume Preview</a
+        >
+        <a class="resume-btn resume-btn--filled" [href]="resumeUrl" download="Olga_Kruglova_CV.pdf"
+          >Download Resume</a
+        >
+      </div>
+    }
     @if (card().links; as links) {
       <div class="social-links">
         @for (link of links; track link.platform) {

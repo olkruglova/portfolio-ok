@@ -2,6 +2,21 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CardComponent } from '../card/card';
 import { Card } from '../card/card.model';
+import about from '../../assets/about.json';
+
+const EXPERIENCE_START = new Date(2019, 3, 1); // April 2019
+
+function yearsSince(start: Date): number {
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  const anniversaryNotReachedYet =
+    now.getMonth() < start.getMonth() ||
+    (now.getMonth() === start.getMonth() && now.getDate() < start.getDate());
+  if (anniversaryNotReachedYet) {
+    years--;
+  }
+  return years;
+}
 
 @Component({
   selector: 'app-main',
@@ -14,9 +29,10 @@ export class MainComponent {
     {
       collapseTitle: 'O',
       expandTitle: 'About',
-      content: 'This is the first card.',
+      content: about.content.replace('{years}', String(yearsSince(EXPERIENCE_START))),
       class: 'card-about',
       bgColor: 'mulberry',
+      resumeUrl: '/docs/Olga_Kruglova_CV.pdf',
     },
     {
       collapseTitle: 'L',
