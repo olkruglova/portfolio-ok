@@ -28,6 +28,24 @@
         }
       </div>
     }
+    @if (card().projects; as projectList) {
+      <div class="projects">
+        @for (project of projectList; track project.name) {
+          <div class="project-card">
+            <h3 class="project-name">{{ project.name }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-stack">
+              @for (tech of project.stack; track tech) {
+                <span class="project-tech">{{ tech }}</span>
+              }
+            </div>
+            <a class="project-link" [href]="project.url" target="_blank" rel="noopener noreferrer"
+              >View Project →</a
+            >
+          </div>
+        }
+      </div>
+    }
     @if (card().resumeUrl; as resumeUrl) {
       <div class="resume-actions">
         <a

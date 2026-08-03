@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "name": "Project One",
+      "description": "Placeholder description for a featured project. Replace with real project details.",
+      "stack": ["Tech A", "Tech B", "Tech C"],
+      "url": "#"
+    },
+    {
+      "name": "Project Two",
+      "description": "Placeholder description for a featured project. Replace with real project details.",
+      "stack": ["Tech A", "Tech B"],
+      "url": "#"
+    },
+    {
+      "name": "Project Three",
+      "description": "Placeholder description for a featured project. Replace with real project details.",
+      "stack": ["Tech A", "Tech B", "Tech C", "Tech D"],
+      "url": "#"
+    }
+  ]
+}
