@@ -90,9 +90,31 @@ $gradient-border-light: linear-gradient(
   }
 
   .skill-tag {
-    border-color: colors.$black-plum-dark;
     color: colors.$black-plum-dark;
     background: rgba(colors.$black-plum-light, 0.6);
+  }
+
+  .project-card {
+    border-color: colors.$black-cherry-dark;
+    background: colors.$black-cherry-light;
+  }
+
+  .project-name {
+    color: colors.$text-light;
+  }
+
+  .project-description {
+    color: colors.$text-muted-light;
+  }
+
+  .project-tech {
+    color: colors.$text-dark;
+    background: rgba(colors.$black-cherry-dark, 0.6);
+  }
+
+  .project-link {
+    background: colors.$black-cherry-dark;
+    color: colors.$text-dark;
   }
 }
 
@@ -129,9 +151,31 @@ $gradient-border-light: linear-gradient(
   }
 
   .skill-tag {
-    border-color: colors.$black-plum-dark;
     color: colors.$text-dark;
     background: rgba(colors.$black-plum-dark, 0.6);
+  }
+
+  .project-card {
+    border-color: colors.$black-cherry-light;
+    background: colors.$black-cherry-dark;
+  }
+
+  .project-name {
+    color: colors.$text-dark;
+  }
+
+  .project-description {
+    color: colors.$text-muted-dark;
+  }
+
+  .project-tech {
+    color: colors.$text-light;
+    background: rgba(colors.$black-cherry-light, 0.6);
+  }
+
+  .project-link {
+    background: colors.$black-cherry-light;
+    color: colors.$black-cherry-dark;
   }
 }
 
@@ -158,6 +202,10 @@ $gradient-border-light: linear-gradient(
   }
 
   .skills {
+    display: flex;
+  }
+
+  .projects {
     display: flex;
   }
 
@@ -279,11 +327,73 @@ $gradient-border-light: linear-gradient(
   border-radius: 2rem;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1.5px solid;
-  transition: var(--interactive-lift-transition);
+  border: none;
+}
+
+.projects {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid;
+  box-shadow: var(--shadow-soft);
+}
+
+.project-name {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.project-description {
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-tech {
+  font-family: 'Archivo', sans-serif;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border: none;
+}
+
+.project-link {
+  align-self: flex-start;
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  margin-top: var(--space-sm);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition:
+    var(--interactive-lift-transition),
+    box-shadow 0.2s ease;
 
   &:hover {
     transform: var(--interactive-lift);
+    box-shadow: var(--shadow-elevated);
   }
 }
 

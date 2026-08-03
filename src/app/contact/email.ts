@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 export interface ContactMessage {
   name: string;
@@ -6,29 +6,23 @@ export interface ContactMessage {
   message: string;
 }
 
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
-const WEB3FORMS_ACCESS_KEY = '0240f3b6-b877-4480-abb4-79ec23e0e42d';
+// TODO: replace with the deployed Netlify site's URL, e.g. https://<site-name>.netlify.app/api/contact
+const CONTACT_ENDPOINT = "https://<site-name>.netlify.app/api/contact";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class EmailService {
-  async send(message: ContactMessage): Promise<'SUCCESS' | 'FAILED'> {
+  async send(message: ContactMessage): Promise<"SUCCESS" | "FAILED"> {
     try {
-      const formData = new FormData();
-      formData.set('access_key', WEB3FORMS_ACCESS_KEY);
-      formData.set('subject', `New message from ${message.name} via portfolio`);
-      formData.set('name', message.name);
-      formData.set('email', message.email);
-      formData.set('message', message.message);
-
-      const response = await fetch(WEB3FORMS_ENDPOINT, {
-        method: 'POST',
-        body: formData,
+      const response = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(message),
       });
 
       const result = await response.json();
-      return result.success ? 'SUCCESS' : 'FAILED';
+      return result.success ? "SUCCESS" : "FAILED";
     } catch {
-      return 'FAILED';
+      return "FAILED";
     }
   }
 }

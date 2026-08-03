@@ -12,6 +12,13 @@ export interface SkillCategory {
   items: string[];
 }
 
+export interface Project {
+  name: string;
+  description: string;
+  stack: string[];
+  url: string;
+}
+
 export interface Card {
   collapseTitle: string;
   expandTitle: string;
@@ -22,4 +29,5 @@ export interface Card {
   contactForm?: boolean;
   resumeUrl?: string;
   skills?: SkillCategory[];
+  projects?: Project[];
 }

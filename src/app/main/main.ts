@@ -4,6 +4,7 @@ import { CardComponent } from '../card/card';
 import { Card } from '../card/card.model';
 import about from '../../assets/about.json';
 import skills from '../../assets/skills.json';
+import projects from '../../assets/projects.json';
 
 const EXPERIENCE_START = new Date(2019, 3, 1); // April 2019
 
@@ -46,9 +47,10 @@ export class MainComponent {
     {
       collapseTitle: 'G',
       expandTitle: 'Gallery',
-      content: 'This is the third card.',
+      content: null,
       class: 'card-gallery',
       bgColor: 'black-cherry',
+      projects: projects.projects,
     },
     {
       collapseTitle: 'A',
